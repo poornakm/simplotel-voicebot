@@ -85,7 +85,7 @@ function App() {
       const startTime = Date.now();
 
       // Call backend API
-      const response = await fetch('http://localhost:5000/api/process', {
+      const response = await fetch('https://simplotel-voicebot-api.onrender.com/api/process', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text })
@@ -147,7 +147,7 @@ function App() {
 
   const fetchAnalytics = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/analytics');
+      const response = await fetch('https://simplotel-voicebot-api.onrender.com/api/analytics');
       const data = await response.json();
       setAnalytics(data);
     } catch (error) {

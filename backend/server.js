@@ -15,7 +15,7 @@ const allowedOrigins = [
   'https://*.vercel.app'
 ];
 
-app.use(express.cors({
+app.use(cors({
   origin: function(origin, callback) {
     if (!origin || allowedOrigins.includes(origin) || 
         (origin && origin.match(/\.vercel\.app$/))) {
