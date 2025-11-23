@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Mic, MicOff, Send, BarChart3, Loader2, MessageSquare, Database } from 'lucide-react';
 
+// API Configuration - uses environment variable
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 function App() {
   const [isListening, setIsListening] = useState(false);
@@ -85,7 +87,7 @@ function App() {
       const startTime = Date.now();
 
       // Call backend API
-      const response = await fetch('https://simplotel-voicebot-api.onrender.com/api/process', {
+      const response = await fetch(`${API_BASE_URL}/api/process`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text })
@@ -147,7 +149,7 @@ function App() {
 
   const fetchAnalytics = async () => {
     try {
-      const response = await fetch('https://simplotel-voicebot-api.onrender.com/api/analytics');
+      const response = await fetch(`${API_BASE_URL}/api/analytics`);
       const data = await response.json();
       setAnalytics(data);
     } catch (error) {

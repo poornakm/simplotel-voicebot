@@ -71,6 +71,12 @@ This is an intelligent voice bot system designed for hotel customer interactions
 - RESTful API architecture
 - Modern ES6+ JavaScript
 
+### 🚀 Live Demo
+
+- **Frontend**: https://simplotel-voicebot.vercel.app
+- **Backend API**: https://simplotel-voicebot.onrender.com
+- **GitHub**: https://github.com/poornakm/simplotel-voicebot
+
 ## Project Structure
 
 ```
